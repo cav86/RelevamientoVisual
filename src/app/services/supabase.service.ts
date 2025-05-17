@@ -44,7 +44,11 @@ export class SupabaseService {
   }
 
   // Obtener usuario actual
-  getUsuario() {
+  async getUsuario() {
+    if (!this.usuarioActual) {
+      const { data, error } = await this.supabase.auth.getUser();
+      if (data?.user) this.usuarioActual = data.user;
+    }
     return this.usuarioActual;
   }
 }

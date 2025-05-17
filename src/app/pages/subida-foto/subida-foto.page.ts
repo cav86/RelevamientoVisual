@@ -45,7 +45,7 @@ export class SubidaFotoPage {
     this.cargando = true;
 
     try {
-      const usuario = this.supabaseService.getUsuario();
+      const usuario = await this.supabaseService.getUsuario();
       const nombreArchivo = `foto_${Date.now()}.jpg`;
 
       // Subir a Supabase Storage

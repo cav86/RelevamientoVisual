@@ -1,13 +1,24 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>galeria</ion-title>
+    <ion-title>Galería</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">galeria</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-card *ngFor="let foto of fotos">
+    <img [src]="foto.url" />
+
+    <ion-card-header>
+      <ion-card-title>{{ foto.tipo | titlecase }}</ion-card-title>
+      <ion-card-subtitle>{{ foto.correo }} - {{ foto.fecha | date:'short' }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button expand="block" color="success" (click)="votar(foto)">
+        Votar como {{ foto.tipo === 'linda' ? 'la más linda' : 'la más fea' }}
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-text *ngIf="fotos.length === 0">No hay fotos aún.</ion-text>
 </ion-content>
