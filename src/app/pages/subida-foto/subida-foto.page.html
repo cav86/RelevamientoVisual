@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Subir Foto - {{ tipo | titlecase }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="block" (click)="tomarFoto()">Tomar Foto</ion-button>
+
+  <div *ngIf="imagenBase64">
+    <ion-img [src]="imagenBase64"></ion-img>
+    <ion-button expand="block" color="success" (click)="subirFoto()" [disabled]="cargando">
+      Subir Foto
+    </ion-button>
+  </div>
+
+  <ion-spinner *ngIf="cargando" name="dots"></ion-spinner>
+</ion-content>
