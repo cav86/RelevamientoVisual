@@ -1,13 +1,25 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>resultados</ion-title>
+    <ion-title>Resultados</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">resultados</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Fotos Lindas (Torta)</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas id="tortaCanvas"></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Fotos Feas (Barras)</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas id="barrasCanvas"></canvas>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
