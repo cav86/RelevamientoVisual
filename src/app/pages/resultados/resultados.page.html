@@ -5,7 +5,17 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-card>
+
+  <ion-segment value="lindas">
+    <ion-segment-button (click)="mostrarLindas()">
+      <ion-label>Lindas</ion-label>
+    </ion-segment-button>
+    <ion-segment-button (click)="mostrarFeas()">
+      <ion-label>Feas</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-card *ngIf="mostrarTorta">
     <ion-card-header>
       <ion-card-title>Fotos Lindas (Torta)</ion-card-title>
     </ion-card-header>
@@ -14,7 +24,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <ion-card *ngIf="!mostrarTorta">
     <ion-card-header>
       <ion-card-title>Fotos Feas (Barras)</ion-card-title>
     </ion-card-header>
@@ -22,4 +32,5 @@
       <canvas id="barrasCanvas"></canvas>
     </ion-card-content>
   </ion-card>
+
 </ion-content>
