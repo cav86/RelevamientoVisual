@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
-import { createClient, SupabaseClient, Session } from '@supabase/supabase-js';
+//import { createClient, SupabaseClient, Session } from '@supabase/supabase-js';
 
 @NgModule({
   imports: [
