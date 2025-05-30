@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'resultados',
     loadChildren: () => import('./pages/resultados/resultados.module').then( m => m.ResultadosPageModule)
-  },  
+  },   {
+    path: 'splashscreen',
+    loadChildren: () => import('./pages/splashscreen/splashscreen.module').then( m => m.SplashscreenPageModule)
+  },
+ 
 ];
 
 @NgModule({

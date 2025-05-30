@@ -1,49 +1,35 @@
 <!-- src/app/login/login.page.html -->
 
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="login-content" fullscreen="true">
 
-<ion-content class="ion-padding">
-  <h2>Iniciar sesión</h2>
+  <div class="login-box">
 
-  <!-- Campo de correo -->
-  <ion-item>
-    <ion-label position="floating">Correo electrónico</ion-label>
-    <ion-input type="email" [(ngModel)]="email" required></ion-input>
-  </ion-item>
+    <h1 class="login-title">Bienvenido</h1>
+    <p class="login-subtitle">Iniciá sesión para continuar</p>
 
-  <!-- Campo de contraseña -->
-  <ion-item>
-    <ion-label position="floating">Contraseña</ion-label>
-    <ion-input type="password" [(ngModel)]="password" required></ion-input>
-  </ion-item>
+    <!-- Campo de correo -->
+    <ion-item lines="none" class="input-item">
+      <ion-icon slot="start" name="mail-outline"></ion-icon>
+      <ion-input type="email" placeholder="Correo electrónico" [(ngModel)]="email" required></ion-input>
+    </ion-item>
 
-  <!-- Botón para enviar -->
-  <ion-button expand="block" (click)="login()">Ingresar</ion-button>
+    <!-- Campo de contraseña -->
+    <ion-item lines="none" class="input-item">
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-input type="password" placeholder="Contraseña" [(ngModel)]="password" required></ion-input>
+    </ion-item>
 
-  <!-- Botones predefinidos -->
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6">
-        <ion-button color="medium" expand="block" (click)="completarCampos('admin@admin.com', '111111')">Admin</ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button color="medium" expand="block" (click)="completarCampos('invitado@invitado.com', '222222')">Invitado</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6">
-        <ion-button color="medium" expand="block" (click)="completarCampos('usuario@usuario.com', '333333')">Usuario</ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button color="medium" expand="block" (click)="completarCampos('anonimo@anonimo.com', '444444')">Anónimo</ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button color="medium" expand="block" (click)="completarCampos('tester@tester.com', '555555')">Tester</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <!-- Botón para ingresar -->
+    <ion-button expand="block" class="login-button" (click)="login()">Ingresar</ion-button>
+
+    <div class="predefined-buttons">
+      <ion-button fill="clear" (click)="completarCampos('admin@admin.com', '111111')">Admin</ion-button>
+      <ion-button fill="clear" (click)="completarCampos('invitado@invitado.com', '222222')">Invitado</ion-button>
+      <ion-button fill="clear" (click)="completarCampos('usuario@usuario.com', '333333')">Usuario</ion-button>
+      <ion-button fill="clear" (click)="completarCampos('anonimo@anonimo.com', '444444')">Anónimo</ion-button>
+      <ion-button fill="clear" (click)="completarCampos('tester@tester.com', '555555')">Tester</ion-button>
+    </div>
+
+  </div>
+
 </ion-content>
