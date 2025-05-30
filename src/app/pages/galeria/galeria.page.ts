@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { SupabaseService } from 'src/app/services/supabase.service';
+import { SupabaseService } from '../../services/supabase.service';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-galeria',
@@ -11,10 +12,12 @@ import { ToastController } from '@ionic/angular';
 export class GaleriaPage {
   fotos: any[] = [];         // Acá se guardan las fotos a mostrar
   usuario: any = null;       // Acá guardamos el usuario logueado
+  emailUsuario: string = '';
 
   constructor(
     private supabase: SupabaseService,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private router: Router,
   ) {}
 
   // Esta función se ejecuta cada vez que entrás a la página
@@ -80,4 +83,14 @@ export class GaleriaPage {
     });
     toast.present();
   }
+
+  buildUrl(nombre: string): string {
+  return `https://emmbtfryenuobhradovq.supabase.co/storage/v1/object/public/fotos/${nombre}`;
+  }
+
+  async logout() {
+    await this.supabase.logout();
+    this.router.navigateByUrl('/login');
+  }
+
 }

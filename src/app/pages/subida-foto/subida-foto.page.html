@@ -4,15 +4,26 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-button expand="block" (click)="tomarFoto()">Tomar Foto</ion-button>
+<ion-content class="subida-content" fullscreen="true">
 
-  <div *ngIf="imagenBase64">
-    <ion-img [src]="imagenBase64"></ion-img>
-    <ion-button expand="block" color="success" (click)="subirFoto()" [disabled]="cargando">
-      Subir Foto
+  <div class="contenedor-subida">
+
+    <ion-button expand="block" size="large" class="boton-camara" (click)="tomarFoto()">
+      <ion-icon name="camera-outline" slot="start"></ion-icon>
+      Sacar Foto
     </ion-button>
+
+    <div *ngIf="imagenBase64" class="preview-container">
+      <ion-img [src]="imagenBase64"></ion-img>
+
+      <ion-button expand="block" color="success" (click)="subirFoto()" [disabled]="cargando">
+        <ion-icon name="cloud-upload-outline" slot="start"></ion-icon>
+        Subir Foto
+      </ion-button>
+    </div>
+
+    <ion-spinner *ngIf="cargando" name="dots" class="spinner"></ion-spinner>
+
   </div>
 
-  <ion-spinner *ngIf="cargando" name="dots"></ion-spinner>
 </ion-content>

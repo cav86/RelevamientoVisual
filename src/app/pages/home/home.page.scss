@@ -1,42 +1,74 @@
 ion-content {
-  --padding-top: 0;
-  --padding-bottom: 0;
-  --padding-start: 0;
-  --padding-end: 0;
+  --background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
 .botones-container {
   display: flex;
-  height: 100%;
-  width: 100%;
-
-  // Por defecto (pantalla vertical): columna
   flex-direction: column;
-}
-
-@media (orientation: landscape) {
-  .botones-container {
-    flex-direction: row; // En horizontal, se pone en fila
-  }
-
-  .btn-imagen {
-    height: 100% !important;
-    width: 50%;
-  }
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-imagen {
-  flex: 1;
-  padding: 0;
-  margin: 0;
-  --background: transparent;
-  height: 50%;
   width: 100%;
-  position: relative;
+  max-width: 400px;
+  height: auto;
+  background: transparent;
+  border-radius: 1.5rem;
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.15s ease;
+  box-shadow: none;
+}
+
+.btn-imagen:active {
+  transform: scale(0.97);
 }
 
 .btn-imagen img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain; // 🔥 muestra la imagen entera
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.header-flotante {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0 1rem;
+  pointer-events: none; // permite que solo los hijos interactúen
+}
+
+.usuario-info {
+  pointer-events: auto;
+}
+
+.logout-btn {
+  --color: white;
+  --padding-start: 0;
+  --padding-end: 0;
+  --background: transparent;
+  pointer-events: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }

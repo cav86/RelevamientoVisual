@@ -1,0 +1,48 @@
+// src/app/pages/galeria/galeria.page.scss
+
+.galeria-content {
+  --background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.galeria-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.foto-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.foto-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0 0 1rem 1rem;
+}
+
+ion-card-title,
+ion-card-subtitle {
+  color: white;
+}
+
+ion-button {
+  font-weight: bold;
+}
+
+.mensaje-vacio {
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+}

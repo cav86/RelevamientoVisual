@@ -1,11 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Relevamiento Visual</ion-title>
-  </ion-toolbar>
-</ion-header>
+<h2 style="color: white; margin-top: 2rem; text-align: center;">
+  Seleccioná lo que estás viendo
+</h2>
 
 <ion-content fullscreen scroll-y="false" class="ion-no-padding">
-  <div class="botones-container">
+  <!-- Encabezado flotante con usuario y logout -->
+<div class="header-flotante">
+  <div class="usuario-info">
+    Usuario: {{ emailUsuario }}
+  </div>
+  <ion-button fill="clear" size="small" class="logout-btn" (click)="logout()">
+    <ion-icon name="log-out-outline" slot="icon-only"></ion-icon>
+  </ion-button>
+</div>  
+<div class="botones-container">
     <ion-button expand="block" fill="clear" class="btn-imagen" (click)="irASubida('linda')">
       <img src="assets/linda.png" alt="Cosas Lindas" />
     </ion-button>

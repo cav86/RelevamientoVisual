@@ -4,21 +4,39 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-card *ngFor="let foto of fotos">
-    <img [src]="foto.url" />
+<ion-content class="galeria-content" fullscreen="true">
 
-    <ion-card-header>
-      <ion-card-title>{{ foto.tipo | titlecase }}</ion-card-title>
-      <ion-card-subtitle>{{ foto.correo }} - {{ foto.fecha | date:'short' }}</ion-card-subtitle>
-    </ion-card-header>
+    <!-- Encabezado flotante con usuario y logout -->
+<div class="header-flotante">
+  <div class="usuario-info">
+    Usuario: {{ emailUsuario }}
+  </div>
+  <ion-button fill="clear" size="small" class="logout-btn" (click)="logout()">
+    <ion-icon name="log-out-outline" slot="icon-only"></ion-icon>
+  </ion-button>
+</div>  
 
-    <ion-card-content>
-      <ion-button expand="block" color="success" (click)="votar(foto)">
-        Votar como {{ foto.tipo === 'linda' ? 'la más linda' : 'la más fea' }}
-      </ion-button>
-    </ion-card-content>
-  </ion-card>
+  <div class="galeria-container">
+    <ion-card *ngFor="let foto of fotos" class="foto-card">
+      <!-- <img [src]="foto.url" class="foto-img" /> -->
+      <img [src]="foto.imagen_url.startsWith('http') ? foto.imagen_url : buildUrl(foto.imagen_url)" class="foto-img" />
 
-  <ion-text *ngIf="fotos.length === 0">No hay fotos aún.</ion-text>
+
+      <ion-card-header>
+        <ion-card-title>{{ foto.tipo | titlecase }}</ion-card-title>
+        <ion-card-subtitle>{{ foto.correo }} - {{ foto.fecha | date:'short' }}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-button expand="block" color="success" (click)="votar(foto)">
+          Votar como {{ foto.tipo === 'linda' ? 'la más linda' : 'la más fea' }}
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-text *ngIf="fotos.length === 0" class="mensaje-vacio">
+      No hay fotos aún.
+    </ion-text>
+  </div>
+
 </ion-content>

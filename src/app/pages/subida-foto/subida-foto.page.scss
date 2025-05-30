@@ -1,0 +1,51 @@
+// src/app/pages/subida-foto/subida-foto.page.scss
+
+.subida-content {
+  --background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-subida {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.boton-camara {
+  --background: #00c9ff;
+  --background-activated: #00b0e0;
+  --border-radius: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.preview-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+
+  ion-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.spinner {
+  margin-top: 2rem;
+  width: 40px;
+  height: 40px;
+  color: white;
+}

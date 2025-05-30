@@ -1,0 +1,39 @@
+ion-content {
+  --background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: block;
+  padding: 2rem 1rem;
+}
+
+ion-segment {
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 400px;
+}
+
+ion-card {
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+ion-card-title {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
