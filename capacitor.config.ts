@@ -11,6 +11,10 @@ const config: CapacitorConfig = {
       photoAlbumSaveLocation: 'Public',
       saveToGallery: true,
     },
+    SplashScreen: {
+      launchShowDuration: 100, // 🔥 dura 100ms
+      autoHide: true,
+    },
   },
 };
 
